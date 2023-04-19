@@ -30,7 +30,7 @@ export const store = reactive({
             .get(url)
             .then(response => {
                 console.log(response.data);
-                this.movies = response.data;
+                this.title = response.data.results;
 
                 this.loading = false
             })
