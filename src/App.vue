@@ -9,6 +9,16 @@ export default {
     return {
       store
     }
+  },
+  methods: {
+    performSearch() {
+      //console.log('Search characters');
+      console.log(this.store.searchText);
+      // perform an ajax call 
+      const url = this.store.API_URL + `?title=${this.store.searchText}`
+      //console.log(url)
+      this.store.fetchMovies(url)
+    }
   }
 }
 
@@ -17,7 +27,7 @@ export default {
 
 <template>
   <header>
-    <SearchBox @make-search=""></SearchBox>
+    <SearchBox @make-search="performSearch()"></SearchBox>
 
   </header>
   <main></main>

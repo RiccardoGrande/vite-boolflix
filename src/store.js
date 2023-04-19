@@ -1,5 +1,5 @@
 import { reactive } from 'vue';
-
+import axios from 'axios'
 export const store = reactive({
     searchText: "",
     loading: true,
@@ -30,7 +30,7 @@ export const store = reactive({
             .get(url)
             .then(response => {
                 console.log(response.data);
-                this.url = response.data.results.response;
+                this.movies = response.data;
 
                 this.loading = false
             })
