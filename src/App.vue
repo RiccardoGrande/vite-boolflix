@@ -15,7 +15,7 @@ export default {
       //console.log('Search characters');
       console.log(this.store.searchText);
       // perform an ajax call 
-      const url = this.store.API_URL + `?name=${this.store.searchText}`
+      const url = this.store.api_URL + this.store.searchText
       //console.log(url)
       this.store.fetchMovies(url)
     }

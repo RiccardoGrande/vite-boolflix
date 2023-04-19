@@ -14,8 +14,7 @@ export default {
 
 <template>
     <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Search Movie" v-model='store.searchText'
-            @keyup="$emit('makeSearch')">
+        <input type="text" class="form-control" placeholder="Search Movie" v-model='store.searchText'>
         <button class="btn btn-outline-secondary" type="button" @click="$emit('makeSearch')">Search</button>
     </div>
 </template>
