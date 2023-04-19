@@ -1,11 +1,23 @@
 <script >
+import SearchBox from './components/SearchBox.vue';
+import { store } from './store'
+export default {
+  components: {
+    SearchBox
+  },
+  data() {
+    return {
+      store
+    }
+  }
+}
+
 
 </script>
 
 <template>
   <header>
-    <input type="text" name="" id="">
-    <button></button>
+    <SearchBox @make-search=""></SearchBox>
 
   </header>
   <main></main>
