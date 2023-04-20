@@ -11,24 +11,22 @@ export default {
     }
   },
   methods: {
-    performSearch() {
+    performSearch(searchType) {
       //console.log('Search characters');
-      console.log(this.store.searchText);
+      console.log(searchType);
+
       // perform an ajax call 
-      if (url === this.store.api_URL_Movie) {
+      if (searchType === 'movie') {
+        this.store.fetchMovies(this.store.api_URL_Movie + this.store.searchText);
 
-        let url = this.store.api_URL_Movie + this.store.searchText
-        this.store.fetchMovies(url);
+      } else {
 
-      } else if (url === this.store.api_URL_Series) {
-
-        let url = this.store.api_URL_Series + this.store.searchText
-        this.store.fetchMovies(url);
+        this.store.fetchMovies(this.store.api_URL_Series + this.store.searchText);
 
       }
 
       //console.log(url)
-      this.store.fetchMovies(url);
+      // this.store.fetchMovies(url);
 
 
     }
@@ -40,11 +38,12 @@ export default {
 
 <template>
   <header>
-    <SearchBox @make-search="performSearch()"></SearchBox>
+    <SearchBox @make-search="performSearch"></SearchBox>
 
   </header>
   <main>
     <div class="container">
+      <img src="'http://image.tmdb.org/t/p/w500/' + {{result.poster_path}}" alt="">
       <ul v-for="result in store.results">
         <li>{{ result.title }}</li>
         <li>{{ result.original_title }}</li>
