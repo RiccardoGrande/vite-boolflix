@@ -30,7 +30,15 @@ export default {
     <SearchBox @make-search="performSearch()"></SearchBox>
 
   </header>
-  <main></main>
+  <main>
+    <div class="container">
+      <ul v-for="result in this.store.results">
+        <li>{{ result.original_title }}</li>
+      </ul>
+
+    </div>
+
+  </main>
 </template>
 
 <style scoped></style>
