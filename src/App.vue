@@ -15,15 +15,22 @@ export default {
       //console.log('Search characters');
       console.log(this.store.searchText);
       // perform an ajax call 
-      const url = this.store.api_URL + this.store.searchText
+      if (url === this.store.api_URL_Movie) {
+
+        let url = this.store.api_URL_Movie + this.store.searchText
+        this.store.fetchMovies(url);
+
+      } else if (url === this.store.api_URL_Series) {
+
+        let url = this.store.api_URL_Series + this.store.searchText
+        this.store.fetchMovies(url);
+
+      }
+
       //console.log(url)
       this.store.fetchMovies(url);
 
-      /* if (flag === store.original_language) {
-        return flag
 
-
-      } */
     }
   }
 }
