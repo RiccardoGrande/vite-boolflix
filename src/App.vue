@@ -17,7 +17,13 @@ export default {
       // perform an ajax call 
       const url = this.store.api_URL + this.store.searchText
       //console.log(url)
-      this.store.fetchMovies(url)
+      this.store.fetchMovies(url);
+
+      /* if (flag === store.original_language) {
+        return flag
+
+
+      } */
     }
   }
 }
@@ -35,7 +41,8 @@ export default {
       <ul v-for="result in store.results">
         <li>{{ result.title }}</li>
         <li>{{ result.original_title }}</li>
-        <li><img src="https://flagsapi.com/{{ result.original_language.toUpperCase() }}/flat/64.png"></li>
+        <li><img :src="'https://flagsapi.com/' + result.original_language.toUpperCase() + '/flat/64.png'">
+        </li>
         <li>{{ result.vote_average }}</li>
       </ul>
 
