@@ -13,8 +13,10 @@ export const store = reactive({
     ],
     generateFlag(original_lenguage) {
 
-        original_lenguage.includes('GB')
-        this.generateFlag(original_lenguage === 'https://flagsapi.com/GB/flat/64.png')
+        if (original_lenguage === 'en') {
+            original_lenguage === 'GB'
+
+        } this.generateFlag('https://flagsapi.com/GB/flat/64.png')
 
     },
     fetchMovies(url) {

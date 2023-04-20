@@ -43,11 +43,12 @@ export default {
   </header>
   <main>
     <div class="container">
-      <img src="'http://image.tmdb.org/t/p/w500/' + {{result.poster_path}}" alt="">
+
       <ul v-for="result in store.results">
+        <img src="'http://image.tmdb.org/t/p/w500/' + {{result.poster_path}}" alt="">
         <li>{{ result.title }}</li>
         <li>{{ result.original_title }}</li>
-        <li><img :src="'https://flagsapi.com/' + result.original_language.toUpperCase() + '/flat/64.png'">
+        <li><img :src="generateFlag(original_lenguage)">
         </li>
         <li>{{ result.vote_average }}</li>
       </ul>
