@@ -32,8 +32,11 @@ export default {
   </header>
   <main>
     <div class="container">
-      <ul v-for="result in this.store.results">
+      <ul v-for="result in store.results">
+        <li>{{ result.title }}</li>
         <li>{{ result.original_title }}</li>
+        <li><img src="https://flagsapi.com/{{ result.original_language.toUpperCase() }}/flat/64.png"></li>
+        <li>{{ result.vote_average }}</li>
       </ul>
 
     </div>
