@@ -29,6 +29,9 @@ export default {
       // this.store.fetchMovies(url);
 
 
+    },
+    toPercentage(vote_average) {
+      return (vote_average / 5 * 100);
     }
   }
 }
@@ -45,7 +48,7 @@ export default {
     <div class="container">
 
       <ul v-for="result in store.results">
-        <img :src="'http://image.tmdb.org/t/p/w500/' + result.poster_path" alt="">
+        <img :src="'http://image.tmdb.org/t/p/w342/' + result.poster_path" alt="">
         <li>{{ result.title }}</li>
         <li>{{ result.original_title }}</li>
         <li><img :src="'https://flagsapi.com/' + result.original_language.toUpperCase() + '/flat/64.png'">
