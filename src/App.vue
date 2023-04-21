@@ -30,8 +30,11 @@ export default {
 
 
     },
-    toPercentage(vote_average) {
-      return (vote_average / 5 * 100);
+    transformVote(vote_average) {
+      // codice per arrotondare e dimezzare il valore
+      return Math.round(vote_average / 2);
+      //return del valore arrotondato e dimezzato
+
     }
   }
 }
@@ -47,13 +50,16 @@ export default {
   <main>
     <div class="container">
 
-      <ul v-for="result in store.results">
+      <ul v-for="result in store.result">
         <img :src="'http://image.tmdb.org/t/p/w342/' + result.poster_path" alt="">
         <li>{{ result.title }}</li>
         <li>{{ result.original_title }}</li>
-        <li><img :src="'https://flagsapi.com/' + result.original_language.toUpperCase() + '/flat/64.png'">
+        <li><!-- <img :src="'https://flagsapi.com/' + result.original_language.toUpperCase() + '/flat/64.png'"> -->
         </li>
-        <li>{{ result.vote_average }} &#11088;</li>
+        <li>
+          <span v-for="n in transformVote(result.vote_average)">&#11088; </span>
+          <span v-for="n in 5 - transformVote(result.vote_average)">&#128970;</span>
+        </li>
       </ul>
 
     </div>

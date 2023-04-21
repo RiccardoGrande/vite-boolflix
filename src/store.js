@@ -17,7 +17,7 @@ export const store = reactive({
             .get(url)
             .then(response => {
                 console.log(response.data);
-                this.results = response.data.results;
+                this.result = response.data.results;
 
                 this.loading = false
             })
