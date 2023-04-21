@@ -53,7 +53,7 @@ export default {
         <li>{{ result.original_title }}</li>
         <li><img :src="'https://flagsapi.com/' + result.original_language.toUpperCase() + '/flat/64.png'">
         </li>
-        <li>{{ result.vote_average }}</li>
+        <li>{{ result.vote_average }} &#11088;</li>
       </ul>
 
     </div>
