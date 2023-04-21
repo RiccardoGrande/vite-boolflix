@@ -11,14 +11,6 @@ export const store = reactive({
         'it', 'fr', 'en', 'de', 'es'
 
     ],
-    generateFlag(original_lenguage) {
-
-        if (original_lenguage === 'en') {
-            original_lenguage === 'GB'
-
-        } this.generateFlag('https://flagsapi.com/GB/flat/64.png')
-
-    },
     fetchMovies(url) {
 
         axios

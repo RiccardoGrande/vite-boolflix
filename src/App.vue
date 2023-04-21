@@ -48,7 +48,7 @@ export default {
         <img src="'http://image.tmdb.org/t/p/w500/' + {{result.poster_path}}" alt="">
         <li>{{ result.title }}</li>
         <li>{{ result.original_title }}</li>
-        <li><img :src="generateFlag(original_lenguage)">
+        <li><img :src="'https://flagsapi.com/' + result.original_language.toUpperCase() + '/flat/64.png'">
         </li>
         <li>{{ result.vote_average }}</li>
       </ul>
