@@ -49,18 +49,20 @@ export default {
   </header>
   <main>
     <div class="container">
+      <div class="card" style="width: 18rem;" v-for="result in store.result">
+        <img :src="'http://image.tmdb.org/t/p/w342/' + result.poster_path" class="card-img-top" alt="...">
+        <div class="card-body">
+          <div class="card-text">{{ result.title }}</div>
+          <div class="card-text">{{ result.original_title }}</div>
+          <div class="card-text"><img
+              :src="'https://flagsapi.com/' + result.original_language.toUpperCase() + '/flat/64.png'"></div>
+          <div class="card-text">
+            <span v-for="n in transformVote(result.vote_average)">&#11088; </span>
+            <span v-for="n in 5 - transformVote(result.vote_average)">&#128970;</span>
+          </div>
 
-      <ul v-for="result in store.result">
-        <img :src="'http://image.tmdb.org/t/p/w342/' + result.poster_path" alt="">
-        <li>{{ result.title }}</li>
-        <li>{{ result.original_title }}</li>
-        <li><!-- <img :src="'https://flagsapi.com/' + result.original_language.toUpperCase() + '/flat/64.png'"> -->
-        </li>
-        <li>
-          <span v-for="n in transformVote(result.vote_average)">&#11088; </span>
-          <span v-for="n in 5 - transformVote(result.vote_average)">&#128970;</span>
-        </li>
-      </ul>
+        </div>
+      </div>
 
     </div>
 
