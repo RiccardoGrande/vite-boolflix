@@ -22,4 +22,9 @@ export default {
 
 
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.input-group {
+    width: 40%;
+
+}
+</style>

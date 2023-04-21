@@ -43,25 +43,26 @@ export default {
 </script>
 
 <template>
-  <header>
+  <header class="container d-flex justify-content-between align-items-center p-3">
+    <div class="header_title">Boolflix</div>
     <SearchBox @make-search="performSearch"></SearchBox>
 
   </header>
   <main>
-    <div class="container">
+    <div class="container d-flex flex-wrap">
       <div class="card" style="width: 18rem;" v-for="result in store.result">
         <img :src="'http://image.tmdb.org/t/p/w342/' + result.poster_path" class="card-img-top" alt="...">
-        <div class="card-body">
-          <div class="card-text">{{ result.title }}</div>
-          <div class="card-text">{{ result.original_title }}</div>
-          <div class="card-text"><img
-              :src="'https://flagsapi.com/' + result.original_language.toUpperCase() + '/flat/64.png'"></div>
-          <div class="card-text">
-            <span v-for="n in transformVote(result.vote_average)">&#11088; </span>
-            <span v-for="n in 5 - transformVote(result.vote_average)">&#128970;</span>
-          </div>
 
+        <div class="card-text">{{ result.title }}</div>
+        <div class="card-text">{{ result.original_title }}</div>
+        <div class="card-text"><img class="img-fluid"
+            :src="'https://flagsapi.com/' + result.original_language.toUpperCase() + '/flat/64.png'"></div>
+        <div class="card-text">
+          <span v-for="n in transformVote(result.vote_average)">&#11088; </span>
+          <span v-for="n in 5 - transformVote(result.vote_average)">&#128970;</span>
         </div>
+
+
       </div>
 
     </div>
@@ -69,4 +70,27 @@ export default {
   </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+.header_title {
+  color: red;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+img {
+  display: block;
+}
+
+img:hover {
+  display: none;
+}
+
+.card-text {
+  display: none;
+}
+
+.card-text:hover {
+  display: block;
+  color: black;
+}
+</style>
