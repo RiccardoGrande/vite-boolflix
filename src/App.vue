@@ -43,14 +43,14 @@ export default {
 </script>
 
 <template>
-  <header class="container d-flex justify-content-between align-items-center p-3">
+  <header class=" d-flex justify-content-around align-items-center p-3">
     <div class="header_title">Boolflix</div>
     <SearchBox @make-search="performSearch"></SearchBox>
 
   </header>
   <main>
     <div class="container d-flex flex-wrap">
-      <div class="card" style="width: 18rem;" v-for="result in store.result">
+      <div class="card m-1" style="width: 18rem;" v-for="result in store.result">
         <img :src="'http://image.tmdb.org/t/p/w342/' + result.poster_path" class="card-img-top" alt="...">
 
         <div class="card-text">{{ result.title }}</div>
@@ -71,17 +71,26 @@ export default {
 </template>
 
 <style scoped>
+header,
+main {
+  background-color: rgb(73, 73, 73);
+}
+
 .header_title {
   color: red;
   font-weight: bold;
   font-size: 2rem;
 }
 
-img {
+.card {
+  background-color: black;
+}
+
+.card-img-top {
   display: block;
 }
 
-img:hover {
+.card-img-top:hover {
   display: none;
 }
 
@@ -91,6 +100,6 @@ img:hover {
 
 .card-text:hover {
   display: block;
-  color: black;
+  color: white;
 }
 </style>

@@ -9,11 +9,11 @@ export default {
         }
     }
 }
-</script>rch
+</script>
 
 
 <template>
-    <div class="input-group mb-3">
+    <div class="input-group ">
         <input type="text" class="form-control" placeholder="Search " v-model='store.searchText'>
 
         <button class="btn btn-outline-secondary" type="button" @click="$emit('makeSearch', 'movie')">Search</button>
