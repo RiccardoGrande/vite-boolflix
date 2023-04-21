@@ -38,7 +38,8 @@ export default {
 
 <template>
     <header class=" d-flex justify-content-around align-items-center p-3">
-        <div class="header_title">Boolflix</div>
+        <!-- ho cambiato il nome del titolo perchè voglio farlo vedere ai miei amici -->
+        <div class="logo">Richflix</div>
 
         <SearchBox @make-search="performSearch"></SearchBox>
 
@@ -53,7 +54,7 @@ header {
 }
 
 
-.header_title {
+.logo {
     color: red;
     font-weight: bold;
     font-size: 2rem;
